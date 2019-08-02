@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'users/new'
+  post 'users/create'
   post 'projects/create'
   resources :projects, only: [:edit, :update]
   get 'projects/index'
