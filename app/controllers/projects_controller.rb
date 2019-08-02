@@ -25,6 +25,10 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def detail
+    @project = Project.find(params[:project_id])
+  end
+
   def cheer
     @project=Project.find(params[:project_id])
     Project.increment_counter(:cheered_count, @project.id)

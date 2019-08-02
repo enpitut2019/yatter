@@ -23,6 +23,7 @@
   </div>
   <div>
     <%= link_to "編集", edit_project_url(project.id) %>
+    <%= link_to "詳細", controller: "projects", action: "detail", project_id: project.id %>
   </div>
   <hr>
 
