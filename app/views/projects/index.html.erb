@@ -17,7 +17,7 @@
     ステータス: <%= project.project_status.name %>
   </div>
   <div>
-    ニックネーム: <%= project.owner %>
+    ニックネーム: <%=  project.user.nil? ? '名無し' : project.user.name %>
   </div>
   <div>
     プロジェクト名: <%= project.title %>
