@@ -3,8 +3,12 @@
   <%= f.text_field :email %>
 
   <%= f.label :password %>
-  <%= f.text_field :password %>
+  <%= f.password_field :password %>
 
   <%= f.submit 'ログイン' %>
 
 <% end %>
+
+<div>
+  <%= link_to "ユーザ登録", users_new_path %>
+</div>
