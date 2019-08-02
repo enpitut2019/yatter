@@ -20,10 +20,16 @@ class ProjectsController < ApplicationController
 
   def update
     @project=Project.find(params[:id])
+    if @project.update_attributes(edit_project_params)
+      redirect_to projects_index_path
+    end
   end
 
   private
     def project_params
       params.require(:project).permit(:owner,:title)
+    end
+    def edit_project_params
+      params.require(:project).permit(:owner,:title,:project_status_id)
     end
 end

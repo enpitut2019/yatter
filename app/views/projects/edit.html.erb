@@ -9,7 +9,7 @@
     </div>
     <div>
        <%= f.label "状態" %>
-       <%= f.number_field :project_status_id %>
+       <%= f.select :project_status_id, [["実行中", 1],["成功", 2],["失敗", 3]] %>
     </div>
     <div>
       <%= f.submit "登録する"%>
