@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
 
   def index
-    @projects = Project.all.order(created_at: "DESC")
+    @projects = Project.all.order(updated_at: "DESC")
   end
   def create
     @project = Project.new(project_params)
@@ -15,7 +15,7 @@ class ProjectsController < ApplicationController
   end
 
   def edit
-    @project=Project.find(2)
+    @project=Project.find(params[:id])
   end
 
   def update
