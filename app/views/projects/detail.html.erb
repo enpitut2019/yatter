@@ -15,6 +15,22 @@
 </div>
 <hr>
 
+<%= form_for(@comment, :url => {:controller=>:comments,:action=>:create}) do |f|%>
+  <div>
+    <%= f.label "ニックネーム" %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label "コメント" %>
+    <%= f.text_field :comment %>
+  </div>
+  <%=f.hidden_field :project_id,:value =>@project.id %>
+  <div>
+    <%= f.submit "登録する"%>
+  </div>
+<% end %>
+
+
 <br/>
 <% @project.comments.each do |comment| %>
 

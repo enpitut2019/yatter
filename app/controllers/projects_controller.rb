@@ -27,6 +27,7 @@ class ProjectsController < ApplicationController
 
   def detail
     @project = Project.find(params[:project_id])
+    @comment = @project.comments.new
   end
 
   def cheer
