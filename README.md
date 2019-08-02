@@ -1,24 +1,10 @@
-# README
-# This application is for those who want to share their success without hesitation!
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Yatter :tada:
 
-Things you may want to cover:
+Yatter is a SISCORN's project!
 
-* Ruby version
+## elevator pitch
 
-* System dependencies
+## members
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## demo
+[http://siscorn-yatter.herokuapp.com/](http://siscorn-yatter.herokuapp.com/)
