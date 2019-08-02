@@ -7,5 +7,8 @@ Rails.application.routes.draw do
   get 'hello/index'
   get 'projects/new'
   get 'projects/cheer'
+  get 'sessions/new'
+  get 'sessions/destroy'
+  post 'sessions/create'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
