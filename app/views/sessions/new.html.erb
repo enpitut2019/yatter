@@ -1,0 +1,10 @@
+<%= form_for :session, method: :post, url: sessions_create_path do |f| %>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+
+  <%= f.label :password %>
+  <%= f.text_field :password %>
+
+  <%= f.submit 'ログイン' %>
+
+<% end %>

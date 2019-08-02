@@ -1,7 +1,9 @@
+<%= @current_user.name %>
+
 <%= form_for(@project, :url => {:action=>:create}) do |f|%>
     <div>
       <%= f.label "ニックネーム" %>
-      <%= f.text_field :owner %>
+      <%= f.text_field :owner, value: @current_user.name %>
     </div>
     <div>
       <%= f.label "タイトル" %>
