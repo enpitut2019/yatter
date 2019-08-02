@@ -14,6 +14,11 @@ class ProjectsController < ApplicationController
     @project=Project.new
   end
 
+  def cheer
+    @project=Project.find(params[:project_id])
+    Project.increment_counter(:cheered_count, article_access_count.id)
+  end
+
   private
     def project_params
       params.require(:project).permit(:owner,:title)
