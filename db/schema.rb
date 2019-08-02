@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_01_071910) do
+ActiveRecord::Schema.define(version: 2019_08_02_051234) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comments", force: :cascade do |t|
+    t.string "name"
+    t.text "comment"
+    t.bigint "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_comments_on_project_id"
+  end
 
   create_table "project_statuses", force: :cascade do |t|
     t.string "name"
@@ -31,5 +40,6 @@ ActiveRecord::Schema.define(version: 2019_08_01_071910) do
     t.index ["project_status_id"], name: "index_projects_on_project_status_id"
   end
 
+  add_foreign_key "comments", "projects"
   add_foreign_key "projects", "project_statuses"
 end

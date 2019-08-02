@@ -14,3 +14,16 @@
 作成日: <%= @project.created_at %>
 </div>
 <hr>
+
+<br/>
+<% @project.comments.each do |comment| %>
+
+  <div>
+    応援者: <%= comment.name %>
+  </div>
+  <div>
+    コメント: <%= comment.comment %>
+  </div>
+  <hr>
+
+<% end %>

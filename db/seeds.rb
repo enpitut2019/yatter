@@ -50,4 +50,32 @@ Project.create!(
     ]
 )
 
+Comment.create!(
+    [
+        {
+            name: 'murakami',
+            comment: 'いいじゃん',
+            project_id: 1,
+        },
+        {
+            name: 'suzuki',
+            comment: 'わかる',
+            project_id: 1,
+        },{
+            name: 'tanaka',
+            comment: 'それな',
+            project_id: 3,
+        },
+        {
+            name: 'sasaki',
+            comment: 'ささきもそう感じた',
+            project_id: 3,
+        },
+        {
+            name: 'murakami',
+            comment: 'すごい',
+            project_id: 2,
+        }
+    ]
+)
 
