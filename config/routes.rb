@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'hello/index'
   get 'projects/new'
   get 'projects/cheer'
+  get 'projects/detail'
   get 'sessions/new'
   get 'sessions/destroy'
   post 'sessions/create'
