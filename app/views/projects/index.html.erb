@@ -18,7 +18,12 @@
   <div>
     作成日: <%= project.created_at %>
   </div>
+  <div>
   <%= button_to "応援する",{conroller: 'projects',action:'cheer'},{method: :get, params: {project_id: project}} %>
+  </div>
+  <div>
+    <%= link_to "編集", edit_project_url(project.id) %>
+  </div>
   <hr>
 
 <% end %>

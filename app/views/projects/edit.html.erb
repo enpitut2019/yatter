@@ -1,4 +1,4 @@
-<%= form_for(@project, :url => {:action=>:create}) do |f|%>
+<%= form_for(@project, :url => {:action=>:update}) do |f|%>
     <div>
       <%= f.label "ニックネーム" %>
       <%= f.text_field :owner %>
@@ -6,6 +6,10 @@
     <div>
       <%= f.label "タイトル" %>
       <%= f.text_field :title %>
+    </div>
+    <div>
+       <%= f.label "状態" %>
+       <%= f.select :project_status_id, [["実行中", 1],["成功", 2],["失敗", 3]] %>
     </div>
     <div>
       <%= f.submit "登録する"%>
