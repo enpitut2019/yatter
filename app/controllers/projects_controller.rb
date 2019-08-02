@@ -16,7 +16,8 @@ class ProjectsController < ApplicationController
 
   def cheer
     @project=Project.find(params[:project_id])
-    Project.increment_counter(:cheered_count, article_access_count.id)
+    Project.increment_counter(:cheered_count, @project.id)
+    redirect_to projects_index_path
   end
 
   private
