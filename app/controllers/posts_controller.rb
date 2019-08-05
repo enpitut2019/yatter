@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   def show
-    @post = Post.find(params[:id])
+    @post = Post.offset(rand(Post.count)).first
   end
+
 end
