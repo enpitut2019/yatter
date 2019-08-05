@@ -3,7 +3,7 @@ class PostsController < ApplicationController
     before_action :require_sign_in!, only: ['new']
 
     def show
-        @post = Post.find(params[:id])
+        @post = Post.offset(rand(Post.count)).first
     end
 
     def new
@@ -25,5 +25,6 @@ class PostsController < ApplicationController
         params.require(:post).permit(:content)
     end
         
+
 
 end
