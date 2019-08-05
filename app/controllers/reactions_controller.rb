@@ -10,9 +10,6 @@ class ReactionsController < ApplicationController
         end
         if @reaction.save
             redirect_to posts_show_path
-            #if params[:emotion] == "1"
-                #flash[:success] = "いいねしました"
-            #end
         end
     end
 end
