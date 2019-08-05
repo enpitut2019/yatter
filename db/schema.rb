@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_02_064747) do
+ActiveRecord::Schema.define(version: 2019_08_05_024055) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "posts", force: :cascade do |t|
+    t.string "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "status"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_posts_on_user_id"
+  end
 
   create_table "project_statuses", force: :cascade do |t|
     t.string "name"
@@ -32,6 +41,16 @@ ActiveRecord::Schema.define(version: 2019_08_02_064747) do
     t.index ["user_id"], name: "index_projects_on_user_id"
   end
 
+  create_table "reactions", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "emotion", default: 0
+    t.bigint "post_id"
+    t.bigint "user_id"
+    t.index ["post_id"], name: "index_reactions_on_post_id"
+    t.index ["user_id"], name: "index_reactions_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name", null: false
     t.string "email", null: false
@@ -43,7 +62,10 @@ ActiveRecord::Schema.define(version: 2019_08_02_064747) do
     t.index ["project_id"], name: "index_users_on_project_id"
   end
 
+  add_foreign_key "posts", "users"
   add_foreign_key "projects", "project_statuses"
   add_foreign_key "projects", "users"
+  add_foreign_key "reactions", "posts"
+  add_foreign_key "reactions", "users"
   add_foreign_key "users", "projects"
 end
