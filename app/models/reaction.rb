@@ -1,5 +1,5 @@
 class Reaction < ApplicationRecord
-  enum emotion: {unread: 0, iine: 1, search: 2}
+  enum emotion: {not_like: 0, like: 1}
   belongs_to :user
   belongs_to :post
 
