@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-u = User.create(
+u1 = User.create(
         password: 'pass',
         password_confirmation: 'pass',
         email: 'enpit@sudame.net',
@@ -14,12 +14,27 @@ u = User.create(
 )
 
 
+u2 = User.create(
+    password: 'pass',
+    password_confirmation: 'pass',
+    email: 'enpit2@sudame.net',
+    name: 'enpit2'
+)
+
+
 for i in 1..10
-  p = Post.new(
-      content: 'THIS IS A POST #' + i.to_s,
-      user: u,
+  Post.create(
+      content: 'THIS IS A POST by u1 #' + i.to_s,
+      user: User.find(1),
       status: i % 2
   )
-  p.save
+end
+
+for i in 11..20
+  Post.create(
+      content: 'THIS IS A POST by u2 #' + i.to_s,
+      user: User.find(2),
+      status: i % 2
+  )
 end
 
