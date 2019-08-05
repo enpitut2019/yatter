@@ -8,6 +8,9 @@ class PostsController < ApplicationController
       posts = Post.where.not(user_id: @current_user.id)
       @post = posts.offset(rand(posts.count)).first
     end
+    if(@post.nil?)
+      redirect_to posts_index_path
+    end
   end
 
   def new
