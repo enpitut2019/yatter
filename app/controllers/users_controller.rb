@@ -6,7 +6,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to projects_index_path
+      sign_in(@user)
+      redirect_to posts_index_path
     else
       render 'users/new'
     end

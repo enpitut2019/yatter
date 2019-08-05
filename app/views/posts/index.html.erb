@@ -1,0 +1,43 @@
+
+ <div>
+  <% if @current_user.present? %>
+    <%= @current_user.name %> さんでログイン中
+    <%= link_to 'ログアウト', sessions_destroy_path %>
+  <% else %>
+    <%= link_to "ログイン", sessions_new_path %>
+  <% end %>
+</div>
+
+ <div>
+   <%= link_to "新規投稿", posts_new_path %>
+ </div>
+
+<div>
+  <%= link_to "戻る", posts_show_path %>
+</div>
+<hr>
+
+
+
+
+ <% @posts.each do |post| %> 
+  <div>
+    ステータス: <%= post.status %>
+  </div>
+  <div>
+    ニックネーム: <%=  post.user.nil? ? '名無し' : post.user.name %>
+  </div>
+  <div>
+  プロジェクト名: <%= post.content %>
+  </div>
+
+  <div>
+    作成日: <%= post.created_at %>
+  </div>
+
+
+
+  <hr>
+
+<% end %>
+
