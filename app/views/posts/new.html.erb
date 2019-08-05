@@ -1,0 +1,11 @@
+
+
+<%= form_for(@post, :url => {:action=>:create}) do |f|%>
+    <div>
+      <%= f.label "ほめてほしいこと" %>
+      <%= f.text_field :content %>
+    </div>
+    <div>
+      <%= f.submit "登録する"%>
+    </div>
+<% end %>
