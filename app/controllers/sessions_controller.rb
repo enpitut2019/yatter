@@ -5,17 +5,18 @@ class SessionsController < ApplicationController
   end
 
   def create
-    if (@user.authenticate(session_params[:password]))
+    if (!@user.nil? and @user.authenticate(session_params[:password]))
       sign_in(@user)
-      redirect_to projects_index_path
+      redirect_to posts_index_path
     else
+      flash.now[:fail] = "メールアドレスかパスワードが違います"
       render 'new'
     end
   end
 
   def destroy
     sign_out
-    redirect_to projects_index_path
+    redirect_to posts_index_path
   end
 
   private
