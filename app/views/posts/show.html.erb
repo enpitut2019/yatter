@@ -1,2 +1,7 @@
-<%= @post.content %>
-<%= link_to "next post", posts_show_path %>
+<head>
+    <div><%= link_to "投稿する", posts_new_path%></div>
+</head>
+<body>
+    <h1><%= @post.content %></h1>
+    <%= link_to "next post", posts_show_path %>
+</body>
