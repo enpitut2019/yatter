@@ -3,5 +3,6 @@
 </head>
 <body>
     <h1><%= @post.content %></h1>
-    <%= link_to "next post", posts_show_path %>
+    <%= link_to "next post", reactions_create_path(emotion: 0 , post_id: @post.id)%>
+    <%= link_to "いいね!", reactions_create_path(emotion: 1 , post_id: @post.id)%>
 </body>
