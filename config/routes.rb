@@ -9,8 +9,10 @@ Rails.application.routes.draw do
   post 'projects/create'
   resources :projects, only: [:edit, :update]
   get 'projects/index'
+  get 'posts/index'
   get 'hello/index'
   get 'projects/new'
+  
   get 'projects/cheer'
   get 'projects/detail'
   get 'sessions/new'

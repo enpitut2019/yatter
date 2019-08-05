@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-  before_action :require_sign_in!, only: ['new']
+  before_action :require_sign_in!, only: ['new', 'index']
 
   def show
     @post = Post.offset(rand(Post.count)).first
@@ -21,6 +21,10 @@ class PostsController < ApplicationController
       redirect_to posts_show_path
     end
 
+  end
+
+  def index
+    @posts = Post.where(user_id: @current_user.id).order(updated_at: "DESC")
   end
 
   private

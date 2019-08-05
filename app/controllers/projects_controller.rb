@@ -10,7 +10,7 @@ class ProjectsController < ApplicationController
     @project = Project.new(project_params)
     @project.user_id = @current_user.id
     if @project.save
-      redirect_to projects_index_path
+      redirect_to posts_index_path
     end
   end
 
@@ -25,14 +25,14 @@ class ProjectsController < ApplicationController
   def update
     @project = Project.find(params[:id])
     if @project.update_attributes(edit_project_params)
-      redirect_to projects_index_path
+      redirect_to posts_index_path
     end
   end
 
   def cheer
     @project = Project.find(params[:project_id])
     Project.increment_counter(:cheered_count, @project.id)
-    redirect_to projects_index_path
+    redirect_to posts_index_path
   end
 
   private
