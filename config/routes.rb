@@ -1,22 +1,13 @@
 Rails.application.routes.draw do
   get 'reactions/create'
-  get 'posts/show'
-  get 'posts/new'
+  get '/', to: 'posts#show', as: 'posts/show'
+  get 'new', to: 'posts#new', as: 'posts/new'
   post 'posts/create'
-  get 'posts/show/:id' => 'posts#show'
-  get 'users/new'
+  get 'signup', to: 'users#new', as: 'users/new'
   post 'users/create'
-  post 'projects/create'
-  resources :projects, only: [:edit, :update]
-  get 'projects/index'
   get 'posts/index'
-  get 'hello/index'
-  get 'projects/new'
-  
-  get 'projects/cheer'
-  get 'projects/detail'
-  get 'sessions/new'
-  get 'sessions/destroy'
+  get 'login', to: 'sessions#new', as: 'sessions/new'
+  get 'logout', to: 'sessions#destroy', as: 'sessions/destroy'
   post 'sessions/create'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
