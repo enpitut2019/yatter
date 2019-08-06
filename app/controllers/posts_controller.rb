@@ -5,8 +5,14 @@ class PostsController < ApplicationController
   def show
     @post = Post.offset(rand(Post.count)).first
     if signed_in?
-      posts = Post.where.not(user_id: @current_user.id)
-      @post = posts.offset(rand(posts.count)).first
+      posts_not_current_user = Post.where.not(user_id: @current_user.id)
+      #reactions_by_current_user = @current_user.reactions
+      #if reactions_by_current_user.present?
+       # posts = posts_not_current_user.joins(:reactions).preload(:reactions).where.not(user_id:@current_user.id)
+       # @post = posts.offset(rand(posts.count)).first
+      #else
+        @post = posts_not_current_user.offset(rand(posts_not_current_user.count)).first
+      #end
       @home_point = @current_user.home_point
     end
     if(@post.nil?)

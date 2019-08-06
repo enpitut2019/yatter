@@ -8,6 +8,8 @@ class ReactionsController < ApplicationController
         elsif params[:emotion] == "1" || params[:emotion] == "2" || params[:emotion] == "3" || params[:emotion] == "4" || params[:emotion] == "5" || params[:emotion] == "6"
             @reaction = @current_user.reactions.new(emotion: params[:emotion].to_i, post_id: params[:post_id].to_i)
             User.increment_counter(:home_point, @current_user.id)
+        else
+            redirect_to posts_show_path
         end
         if @reaction.save
             redirect_to posts_show_path
