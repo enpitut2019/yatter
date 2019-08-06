@@ -5,3 +5,63 @@
 .danger {
   color: red;
 }
+
+.login {
+    margin: 40px auto;
+    width: 70%;
+}
+
+.login-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #FA842F;
+}
+
+.login-form {
+    margin: 24px 0px;
+}
+
+.form-text {
+    font-size: 20px;
+    font-weight: bold;
+    color: #FA842F;
+}
+
+.form-content {
+    background: rgba(250, 132, 47, 0.34);
+    border-radius: 6px;
+    width: 100%;
+    height: 20px;
+    margin-bottom: 16px;
+    border-color: #FFF;
+    border-width: 0px;
+    height: 30px;
+}
+
+.login-button {
+    text-align: center;
+}
+
+.button {
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #FA842F;
+    color: #FFF;
+    border-radius: 8px;
+    width: 160px;
+    margin: 0 auto;
+    height: 35px;
+    border-color: #FFF;
+}
+
+.login-new {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.link {
+    font-size: 16px;
+    font-weight: bold;
+    color: #FA842F;
+    margin-top: 20px;
+}
