@@ -1,3 +1,55 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "variables";
+
+.users {
+  &-new {
+    padding: 2rem;
+    max-width: 300px;
+    margin: auto;
+
+    &__title {
+      color: $primary;
+      font-size: 1.5rem;
+    }
+
+    &__field {
+      margin: 0.5rem auto;
+
+      .label {
+        display: block;
+        font-weight: bold;
+        color: $primary;
+      }
+
+      .input {
+        background-color: $primary-light;
+        border: none;
+        height: 2rem;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        border-radius: 6px;
+        width: 100%;
+      }
+      
+      &.center {
+        text-align: center;
+      }
+    }
+
+    &__submit {
+      margin-top: 2rem;
+      background-color: $primary;
+      border: none;
+      padding: 0.5rem 3rem;
+      color: white;
+      font-size: 1rem;
+      font-weight: bold;
+      -webkit-border-radius: 6px;
+      -moz-border-radius: 6px;
+      border-radius: 6px;
+    }
+  }
+}
