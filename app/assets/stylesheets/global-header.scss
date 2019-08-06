@@ -1,0 +1,46 @@
+.global-header {
+  height: 75px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #fa842f;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 1.5rem;
+
+  &__item {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin: auto 0.5rem;
+
+    p {
+      margin: 0;
+    }
+
+    &.point {
+      font-size: 2rem;
+
+      .ten {
+        margin-left: 0.25rem;
+        font-size: 0.75rem;
+      }
+    }
+
+    &.title {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    &.post {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+  }
+
+  &__space {
+    flex: 1;
+  }
+}

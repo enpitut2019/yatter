@@ -1,0 +1,16 @@
+<nav class="global-footer">
+  <% if signed_in? %>
+    <div class="global-footer__logout">
+      <%= link_to 'ログアウト', sessions_destroy_path %>
+    </div>
+  <% else %>
+    <div class="global-footer__login">
+      <%= link_to 'ログイン', sessions_new_path %>
+    </div>
+<% end %>
+  <div class="global-footer__space"></div>
+
+  <p class="global-footer__copyright">
+    &copy; All Rights Reserved Haruka Iwanami
+  </p>
+</nav>

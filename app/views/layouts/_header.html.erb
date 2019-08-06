@@ -1,9 +1,20 @@
 <% if signed_in? %>
-    <ul id="nav">
-        <li><%= link_to "Yatter", posts_show_path %></li>
-        <li><%= link_to "My Page", posts_index_path %></li>
-        <li><%= link_to "+", posts_new_path %></li>
-        <li><%= link_to 'ログアウト', sessions_destroy_path %></li>
-    </ul>
+  <nav class="global-header">
+    <%= link_to "Yatter", posts_show_path, class: "global-header__item title" %>
+    <div class="global-header__space"></div>
+    <div class="global-header__item point">
+      <p>
+        <%= @current_user.home_point %><span class="ten">点</span>
+      </p>
+    </div>
+    <%= link_to "My Page", posts_index_path, class: "global-header__item my-page" %>
+    <%= link_to "+", posts_new_path, class: "global-header__item post" %>
+    <%#= link_to 'ログアウト', sessions_destroy_path, class: "global-header__item" %>
+  </nav>
 <% else %>
+  <nav class="global-header">
+    <%= link_to "Yatter", posts_show_path, class: "global-header__item title" %>
+    <div class="global-header__space"></div>
+    <%#= link_to 'ログアウト', sessions_destroy_path, class: "global-header__item" %>
+  </nav>
 <% end %>
