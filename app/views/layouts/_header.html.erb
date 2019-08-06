@@ -1,0 +1,10 @@
+<% if signed_in? %>
+  <nav class="global-header">
+    <%= link_to "Yatter", posts_show_path, class: "global-header__item title" %>
+    <div class="global-header__space"></div>
+    <%= link_to "My Page", posts_index_path, class: "global-header__item my-page" %>
+    <%= link_to "+", posts_new_path, class: "global-header__item post" %>
+    <%#= link_to 'ログアウト', sessions_destroy_path, class: "global-header__item" %>
+  </nav>
+<% else %>
+<% end %>
