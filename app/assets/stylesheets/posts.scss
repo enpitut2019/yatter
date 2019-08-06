@@ -110,5 +110,93 @@
       font-size: 1.25rem;
     }
   }
+
+  &-index {
+    width: 100vw;
+    max-width: 798px;
+
+    &__nickname {
+      color: $primary;
+      font-weight: bold;
+      font-size: 1.25rem;
+      padding: 1rem;
+    }
+
+    &__buttons {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+
+      .button {
+        display: block;
+        text-decoration: none;
+        color: $primary;
+        border: 2px solid $primary;
+        padding: 0.25rem 0.5rem;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        border-radius: 6px;
+      }
+    }
+
+    &__point {
+      text-align: center;
+      margin-bottom: 1rem;
+      color: $primary;
+
+      .point, .title {
+        margin: 0;
+      }
+
+      .point {
+        font-size: 3rem;
+        font-weight: bold;
+
+        .ten {
+          font-size: 1rem;
+          font-weight: normal;
+        }
+      }
+    }
+
+    &__posts {
+      margin: 2rem auto;
+    }
+
+    &__post {
+      margin: 0.5rem auto;
+      padding: 0.5rem 1rem;
+      color: $primary;
+      border-top: 1px solid $primary;
+
+      &:last-of-type {
+        border-bottom: 1px solid $primary;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      &__timestamp {
+
+      }
+
+      &__content {
+        font-size: 1.5rem;
+        font-weight: bolder;
+      }
+
+      &__reactions {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: auto -0.5rem;
+      }
+
+      &__reaction {
+        margin: auto 0.5rem;
+      }
+    }
+  }
 }
   
