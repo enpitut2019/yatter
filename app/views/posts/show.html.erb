@@ -23,34 +23,34 @@
           <p class="text">超いいね！</p>
         <% end %>
       <% else %>
-        <%= link_to reactions_create_path(emotion: 4, post_id: @post.id), class: 'posts-show__reaction disabled' do %>
+        <div class="posts-show__reaction disabled">
           <i class="icon fas fa-heart"></i>
           <p class="text">超いいね！</p>
-        <% end %>
+        </div>
       <% end %>
 
       <% if @home_point >= 10 %>
         <%= link_to reactions_create_path(emotion: 5, post_id: @post.id), class: 'posts-show__reaction' do %>
-          <i class="icon">神</i>
+          <span class="icon text-icon">神</span>
           <p class="text">神！</p>
         <% end %>
       <% else %>
-        <%= link_to reactions_create_path(emotion: 5, post_id: @post.id), class: 'posts-show__reaction disabled' do %>
-          <i class="icon">神</i>
+        <div class="posts-show__reaction disabled">
+          <span class="icon text-icon">神</span>
           <p class="text">神！</p>
-        <% end %>
+        </div>
       <% end %>
 
       <% if @home_point >= 15 %>
         <%= link_to reactions_create_path(emotion: 6, post_id: @post.id), class: 'posts-show__reaction' do %>
-          <i class="icon">偉業</i>
+          <span class="icon text-icon">偉</span>
           <p class="text">偉業！！！</p>
         <% end %>
       <% else %>
-        <%= link_to reactions_create_path(emotion: 6, post_id: @post.id), class: 'posts-show__reaction disabled' do %>
-          <i class="icon">偉業</i>
+        <div class="posts-show__reaction disabled">
+          <span class="icon text-icon">偉</span>
           <p class="text">偉業！！！</p>
-        <% end %>
+        </div>
       <% end %>
 
       <%= link_to reactions_create_path(emotion: 0, post_id: @post.id), class: 'posts-show__reaction' do %>
@@ -59,5 +59,5 @@
       <% end %>
     </div>
   </div>
-  
+
 </div>
