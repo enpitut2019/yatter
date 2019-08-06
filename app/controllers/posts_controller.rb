@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-  before_action :require_sign_in!, only: ['new', 'index','show']
+  before_action :require_sign_in!, only: ['new', 'index']
 
   def show
     @post = Post.offset(rand(Post.count)).first
@@ -23,6 +23,8 @@ class PostsController < ApplicationController
         @post = posts_not_current_user.offset(rand(posts_not_current_user.count)).first
       end
       @home_point = @current_user.home_point
+    else
+      @home_point = 0
     end
   end
 
