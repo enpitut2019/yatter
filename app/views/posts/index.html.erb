@@ -38,7 +38,7 @@
   偉業: <%= post.reactions.where(emotion: :igyou).count %>
   </div>
   <div>
-    作成日: <%= post.created_at %>
+    作成日: <%= post.created_at.strftime("%Y-%m-%d %H:%M") %>
   </div>
 
 
