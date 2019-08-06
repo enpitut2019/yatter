@@ -1,49 +1,51 @@
+<div class="posts-index">
 
- <div>
-  <% if @current_user.present? %>
-    <%= @current_user.name %> さんでログイン中
-    <div>
-      <%= link_to 'ログアウト', sessions_destroy_path %>
-    </div>
-  <% else %>
-    <%= link_to "ログイン", sessions_new_path %>
-  <% end %>
+  <div class="posts-index__nickname">
+    <%= @current_user.name %>さんでログイン中
+  </div>
+
+  <div class="posts-index__point">
+    <p class="title">あなたのほめポイント</p>
+    <p class="point"><%= @home_point %><span class="ten">点</span>
+  </div>
+
+  <div class="posts-index__buttons">
+    <%= link_to "ほめてをつくる", posts_new_path, class: "button" %>
+    <%= link_to "みんなのほめて", posts_show_path, class: "button" %>
+  </div>
+
+
+  <div class="posts-index__posts">
+    <% @posts.each do |post| %>
+      <div class="posts-index__post">
+        <p class="posts-index__timestamp">
+          <%= post.created_at.in_time_zone('Tokyo').strftime("%Y-%m-%d %H:%M") %>
+        </p>
+        <p class="posts-index__post__content">
+          <%= post.content %>
+        </p>
+        <div class="posts-index__post__reactions">
+          <div class="posts-index__post__reaction">
+            いいね: <%= post.reactions.where(emotion: :like).count %>
+          </div>
+          <div class="posts-index__post__reaction">
+            すごいね: <%= post.reactions.where(emotion: :sugoine).count %>
+          </div>
+          <div class="posts-index__post__reaction">
+            えらいね: <%= post.reactions.where(emotion: :eraine).count %>
+          </div>
+          <div class="posts-index__post__reaction">
+            超いいね: <%= post.reactions.where(emotion: :chou_iine).count %>
+          </div>
+          <div class="posts-index__post__reaction">
+            神: <%= post.reactions.where(emotion: :kami).count %>
+          </div>
+          <div class="posts-index__post__reaction">
+            偉業: <%= post.reactions.where(emotion: :igyou).count %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
 </div>
- <div>
-  あなたのほめポイント:<%= @home_point %>
- </div>
- <div>
-   <%= link_to "新規投稿", posts_new_path %>
- </div>
-
-<div>
-  <%= link_to "戻る", posts_show_path %>
-</div>
-<hr>
-
-
-
-
- <% @posts.each do |post| %>
-  <div>
-    ステータス: <%= post.status %>
-  </div>
-  <div>
-    ニックネーム: <%=  post.user.nil? ? '名無し' : post.user.name %>
-  </div>
-  <div>
-  プロジェクト名: <%= post.content %>
-  </div>
-  <div>
-  いいね数: <%= post.reactions.where(emotion: :like).count %>
-  </div>
-  <div>
-    作成日: <%= post.created_at %>
-  </div>
-
-
-
-  <hr>
-
-<% end %>
-

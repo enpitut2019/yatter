@@ -1,45 +1,202 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "variables";
 
-#show {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  margin: 1rem;
+.posts {
+  &-show {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 2rem 1rem;
+    max-width: 798px;
 
-  .button {
-    display: inline-block;
-    padding: 0.25rem 0.5rem;
-    border: 1px solid black;
-    margin-right: 1rem;
+    &__homete {
+      color: $primary;
+      font-weight: bold;
+    }
+
+    &__post {
+      border: 2px solid $primary;
+      -webkit-border-radius: 6px;
+      -moz-border-radius: 6px;
+      border-radius: 6px;
+    }
+
+    &__content {
+      color: white;
+      background-color: $primary;
+      padding: 1rem;
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    &__reactions {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+      padding: 2rem 0;
+    }
+
+    &__reaction {
+      color: $primary;
+      text-decoration: none;
+      text-align: center;
+      width: 100px;
+      margin: 0.5rem;
+
+      .icon {
+        font-size: 3rem;
+      }
+
+      .text {
+        margin: 0;
+        font-weight: bold;
+      }
+
+      .text-icon {
+        font-family: a-otf-futo-min-a101-pr6n, serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      &.disabled {
+        color: $primary-light;
+      }
+    }
+
+
   }
 
-  .content {
-    padding: 1rem;
-    border: 1px solid black;
+
+  &-new {
+    padding: 5rem;
+    background-color: white;
+    text-align: center;
+
+    &__title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: $primary;
+      display: block;
+    }
+
+    &__input {
+      margin: 0.5rem auto;
+      height: 2.5rem;
+      width: 14rem;
+      background-color: #fdecd3;
+      border: none;
+      -webkit-border-radius: 6px;
+      -moz-border-radius: 6px;
+      border-radius: 6px;
+      padding: 0 1rem;
+    }
+
+    &__submit {
+      margin: 3rem auto 0.5rem;
+      border: none;
+      color: white;
+      background-color: $primary;
+      padding: 0.5rem 3rem;
+      -webkit-border-radius: 6px;
+      -moz-border-radius: 6px;
+      border-radius: 6px;
+      font-size: 1.25rem;
+    }
   }
 
-  .post {
-    position: fixed;
-    height: 50px;
-    width: 50px;
-    bottom: 20px;
-    right: 20px;
-    padding: 1rem;
-    font-size: 3rem;
-    line-height: 3rem;
-    border: 1px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-    text-decoration: none;
+  &-index {
+    width: 100vw;
+    max-width: 798px;
+
+    &__nickname {
+      color: $primary;
+      font-weight: bold;
+      font-size: 1.25rem;
+      padding: 1rem;
+    }
+
+    &__buttons {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+
+      .button {
+        display: block;
+        text-decoration: none;
+        color: $primary;
+        border: 2px solid $primary;
+        padding: 0.25rem 0.5rem;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        border-radius: 6px;
+      }
+    }
+
+    &__point {
+      text-align: center;
+      margin-bottom: 1rem;
+      color: $primary;
+
+      .point, .title {
+        margin: 0;
+      }
+
+      .point {
+        font-size: 3rem;
+        font-weight: bold;
+
+        .ten {
+          font-size: 1rem;
+          font-weight: normal;
+        }
+      }
+    }
+
+    &__posts {
+      margin: 2rem auto;
+    }
+
+    &__post {
+      margin: 0.5rem auto;
+      padding: 0.5rem 1rem;
+      color: $primary;
+      border-top: 1px solid $primary;
+
+      &:last-of-type {
+        border-bottom: 1px solid $primary;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      &__timestamp {
+
+      }
+
+      &__content {
+        font-size: 1.5rem;
+        font-weight: bolder;
+      }
+
+      &__reactions {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: auto -0.5rem;
+      }
+
+      &__reaction {
+        margin: auto 0.5rem;
+      }
+    }
   }
 }
+  

@@ -1,18 +1,33 @@
-<div class="danger">
-  <%= flash[:fail] %>
-</div>
+<div class="sessions-new">
+  <div class="danger">
+    <%= flash[:fail] %>
+  </div>
 
-<%= form_for :session, method: :post, url: sessions_create_path do |f| %>
-  <%= f.label :email %>
-  <%= f.text_field :email %>
+  <div class="login">
+    <%= form_for :session, method: :post, url: sessions_create_path do |f| %>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+      <div class="login-text">
+        <%= f.label 'ログイン' %>
+      </div>
 
-  <%= f.submit 'ログイン' %>
+      <div class="login-form">
+        <div class="form-text">
+          <%= f.label :'メールアドレス' %>
+        </div>
+        <%= f.email_field :email, :class => 'form-content' %>
 
-<% end %>
+        <div class="form-text">
+          <%= f.label :'パスワード' %>
+        </div>
+        <%= f.password_field :password, :class => 'form-content' %>
+      </div>
+      <div class="login-button">
+        <%= f.submit 'ログイン', :class => 'button' %>
+      </div>
+    <% end %>
 
-<div>
-  <%= link_to "ユーザ登録", users_new_path %>
+    <div class="login-new">
+      <%= link_to "ユーザ登録はこちら", users_new_path, :class => 'link' %>
+    </div>
+  </div>
 </div>

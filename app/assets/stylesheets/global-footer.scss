@@ -1,0 +1,39 @@
+@import "variables";
+
+.global-footer {
+  display: flex;
+  flex-direction: column;
+  background-color: $primary-light;
+  color: $primary;
+  min-height: 100px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 1rem 0;
+
+  &__copyright {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 0.75rem;
+  }
+  
+  &__login, &__logout {
+    text-align: center;
+
+    a {
+      display: inline-block;
+      height: 1.5rem;
+      color: $primary;
+      text-decoration: none;
+      border: 1px solid $primary;
+      padding: 0.5rem 1rem;
+      -webkit-border-radius: 6px;
+      -moz-border-radius: 6px;
+      border-radius: 6px;
+    }
+  }
+
+  &__space {
+    flex: 1;
+  }
+}

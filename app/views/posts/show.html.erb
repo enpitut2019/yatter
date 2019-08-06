@@ -1,16 +1,63 @@
-<div id="show">
-  <%= link_to "+", posts_new_path, class: "post" %>
-  <%= link_to "自分の投稿を見る", posts_index_path, class: 'button' %>
+<div class="posts-show">
+  <div class="posts-show__post">
+    <p class="posts-show__content">
+      <%= @post.content %>
+    </p>
+    <div class="posts-show__reactions">
+      <%= link_to reactions_create_path(emotion: 1, post_id: @post.id), class: 'posts-show__reaction' do %>
+        <i class="icon far fa-thumbs-up"></i>
+        <p class="text">いいね！</p>
+      <% end %>
+      <%= link_to reactions_create_path(emotion: 2, post_id: @post.id), class: 'posts-show__reaction' do %>
+        <i class="icon fas fa-star"></i>
+        <p class="text">すごいね！</p>
+      <% end %>
+      <%= link_to reactions_create_path(emotion: 3, post_id: @post.id), class: 'posts-show__reaction' do %>
+        <i class="icon fas fa-sign-language"></i>
+        <p class="text">えらいね！</p>
+      <% end %>
 
+      <% if @home_point >= 5 %>
+        <%= link_to reactions_create_path(emotion: 4, post_id: @post.id), class: 'posts-show__reaction' do %>
+          <i class="icon fas fa-heart"></i>
+          <p class="text">超いいね！</p>
+        <% end %>
+      <% else %>
+        <div class="posts-show__reaction disabled">
+          <i class="icon fas fa-heart"></i>
+          <p class="text">超いいね！</p>
+        </div>
+      <% end %>
 
-  <p class="success">
-    <%= flash[:success] %>
-  </p>
+      <% if @home_point >= 10 %>
+        <%= link_to reactions_create_path(emotion: 5, post_id: @post.id), class: 'posts-show__reaction' do %>
+          <span class="icon text-icon">神</span>
+          <p class="text">神！</p>
+        <% end %>
+      <% else %>
+        <div class="posts-show__reaction disabled">
+          <span class="icon text-icon">神</span>
+          <p class="text">神！</p>
+        </div>
+      <% end %>
 
+      <% if @home_point >= 15 %>
+        <%= link_to reactions_create_path(emotion: 6, post_id: @post.id), class: 'posts-show__reaction' do %>
+          <span class="icon text-icon">偉</span>
+          <p class="text">偉業！！！</p>
+        <% end %>
+      <% else %>
+        <div class="posts-show__reaction disabled">
+          <span class="icon text-icon">偉</span>
+          <p class="text">偉業！！！</p>
+        </div>
+      <% end %>
 
-  <h1 class="content"><%= @post.content %></h1>
+      <%= link_to reactions_create_path(emotion: 0, post_id: @post.id), class: 'posts-show__reaction' do %>
+        <i class="icon fas fa-arrow-right"></i>
+        <p class="text">次へ</p>
+      <% end %>
+    </div>
+  </div>
 
-
-  <%= link_to "next post", reactions_create_path(emotion: 0, post_id: @post.id), class: 'button' %>
-  <%= link_to "いいね!", reactions_create_path(emotion: 1, post_id: @post.id), class: 'button'%>
 </div>
