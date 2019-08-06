@@ -12,6 +12,7 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     margin: 2rem 1rem;
+    max-width: 798px;
 
     &__homete {
       color: $primary;
@@ -82,6 +83,7 @@
       font-size: 1.5rem;
       font-weight: bold;
       color: $primary;
+      display: block;
     }
 
     &__input {
