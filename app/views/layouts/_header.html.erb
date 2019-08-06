@@ -1,0 +1,9 @@
+<% if signed_in? %>
+    <ul id="nav">
+        <li><%= link_to "Yatter", posts_show_path %></li>
+        <li><%= link_to "My Page", posts_index_path %></li>
+        <li><%= link_to "+", posts_new_path %></li>
+        <li><%= link_to 'ログアウト', sessions_destroy_path %></li>
+    </ul>
+<% else %>
+<% end %>
