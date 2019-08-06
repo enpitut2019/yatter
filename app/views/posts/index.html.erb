@@ -1,12 +1,5 @@
 
  <div>
-  <% if @current_user.present? %>
-    <%= render 'layouts/header'%>
-  <% else %>
-    <%= link_to "ログイン", sessions_new_path %>
-  <% end %>
-</div>
- <div>
   あなたのほめポイント:<%= @home_point %>
  </div>
  <div>
