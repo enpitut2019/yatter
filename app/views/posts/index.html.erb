@@ -22,9 +22,7 @@
 
 
  <% @posts.each do |post| %>
-  <div>
-    ステータス: <%= post.status %>
-  </div>
+
   <div>
     ニックネーム: <%=  post.user.nil? ? '名無し' : post.user.name %>
   </div>
@@ -32,7 +30,12 @@
   プロジェクト名: <%= post.content %>
   </div>
   <div>
-  いいね数: <%= post.reactions.where(emotion: :like).count %>
+  いいね: <%= post.reactions.where(emotion: :like).count %>
+  すごいね: <%= post.reactions.where(emotion: :sugoine).count %>
+  えらいね: <%= post.reactions.where(emotion: :eraine).count %>
+  超いいね: <%= post.reactions.where(emotion: :chou_iine).count %>
+  神: <%= post.reactions.where(emotion: :kami).count %>
+  偉業: <%= post.reactions.where(emotion: :igyou).count %>
   </div>
   <div>
     作成日: <%= post.created_at %>

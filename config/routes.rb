@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'reactions/create'
+  post 'reactions/create'
   get 'posts/show'
   get 'posts/new'
   post 'posts/create'
