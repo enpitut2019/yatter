@@ -5,6 +5,11 @@
       <%= f.label "ほめてほしいこと" %>
       <%= f.text_field :content %>
     </div>
+      
+    <div>
+      <%= f.select :status, Post.statuses.keys, :selected=>Post.statuses[@post.status] %>
+    </div>
+
     <div>
       <%= f.submit "登録する"%>
     </div>

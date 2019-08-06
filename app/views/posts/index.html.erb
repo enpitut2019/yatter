@@ -21,15 +21,21 @@
 
 
  <% @posts.each do |post| %> 
-  <div>
-    ステータス: <%= post.status %>
-  </div>
+
   <div>
     ニックネーム: <%=  post.user.nil? ? '名無し' : post.user.name %>
   </div>
   <div>
   プロジェクト名: <%= post.content %>
   </div>
+  <div>
+  ステータス: <%= post.status %>
+  </div>
+
+  <div>
+  いいね数:
+  </div>
+
 
   <div>
     作成日: <%= post.created_at %>

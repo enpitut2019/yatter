@@ -9,6 +9,7 @@
 
 
   <h1 class="content"><%= @post.content %></h1>
+  <h2 class="status"><%= @post.status %></h2>
 
 
   <%= link_to "next post", reactions_create_path(emotion: 0, post_id: @post.id), class: 'button' %>
