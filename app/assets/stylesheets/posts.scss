@@ -6,40 +6,79 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#show {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  margin: 1rem;
+.posts {
+  &-show {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 1rem;
 
-  .button {
-    display: inline-block;
-    padding: 0.25rem 0.5rem;
-    border: 1px solid black;
-    margin-right: 1rem;
+    .button {
+      display: inline-block;
+      padding: 0.25rem 0.5rem;
+      border: 1px solid black;
+      margin-right: 1rem;
+    }
+
+    .content {
+      padding: 1rem;
+      border: 1px solid black;
+    }
+
+    .post {
+      position: fixed;
+      height: 50px;
+      width: 50px;
+      bottom: 20px;
+      right: 20px;
+      padding: 1rem;
+      font-size: 3rem;
+      line-height: 3rem;
+      border: 1px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+      text-decoration: none;
+    }
   }
 
-  .content {
-    padding: 1rem;
-    border: 1px solid black;
-  }
 
-  .post {
-    position: fixed;
-    height: 50px;
-    width: 50px;
-    bottom: 20px;
-    right: 20px;
-    padding: 1rem;
-    font-size: 3rem;
-    line-height: 3rem;
-    border: 1px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-    text-decoration: none;
+  &-new {
+    padding: 5rem;
+    background-color: white;
+    text-align: center;
+
+    &__title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #f9c270;
+    }
+
+    &__input {
+      margin: 0.5rem auto;
+      height: 2.5rem;
+      width: 14rem;
+      background-color: #fdecd3;
+      border: none;
+      -webkit-border-radius: 6px;
+      -moz-border-radius: 6px;
+      border-radius: 6px;
+      padding: 0 1rem;
+    }
+
+    &__submit {
+      margin: 3rem auto 0.5rem;
+      border: none;
+      color: white;
+      background-color: #f9c270;
+      padding: 0.5rem 3rem;
+      -webkit-border-radius: 6px;
+      -moz-border-radius: 6px;
+      border-radius: 6px;
+      font-size: 1.25rem;
+    }
   }
 }

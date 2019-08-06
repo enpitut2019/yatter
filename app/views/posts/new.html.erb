@@ -1,11 +1,11 @@
-
-
-<%= form_for(@post, :url => {:action=>:create}) do |f|%>
+<div class="posts-new">
+  <%= form_for(@post, :url => {:action => :create}) do |f| %>
     <div>
-      <%= f.label "ほめてほしいこと" %>
-      <%= f.text_field :content %>
+      <%= f.label "ほめられたいこと", class: "posts-new__title" %>
+      <%= f.text_field :content, class: "posts-new__input" %>
     </div>
     <div>
-      <%= f.submit "登録する"%>
+      <%= f.submit "ほめて！", class: "posts-new__submit" %>
     </div>
-<% end %>
+  <% end %>
+</div>
