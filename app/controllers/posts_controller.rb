@@ -19,6 +19,7 @@ class PostsController < ApplicationController
         @post = posts_not_current_user.offset(rand(posts_not_current_user.count)).first
       end
       @home_point = @current_user.home_point
+      @hoge = true
     end
     if(@post.nil?)
       redirect_to posts_index_path
