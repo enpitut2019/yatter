@@ -28,6 +28,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.where(user_id: @current_user.id).order(updated_at: "DESC")
+    @home_point = @current_user.home_point
   end
 
   private
