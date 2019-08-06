@@ -4,7 +4,11 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.offset(rand(Post.count)).first
+    if(@post.nil?)
+      redirect_to posts_index_path
+    end
     if signed_in?
+      @unread = true
       posts_not_current_user = Post.where.not(user_id: @current_user.id)
       reactions_by_current_user = @current_user.reactions
       if reactions_by_current_user.present?
@@ -13,16 +17,12 @@ class PostsController < ApplicationController
        if posts.any?
         @post = posts.shuffle.sample(1).first
        else
-        redirect_to posts_index_path
+        @unread = false
        end
       else
         @post = posts_not_current_user.offset(rand(posts_not_current_user.count)).first
       end
       @home_point = @current_user.home_point
-      @hoge = true
-    end
-    if(@post.nil?)
-      redirect_to posts_index_path
     end
   end
 

@@ -1,6 +1,6 @@
 <div class="posts-show">
 
-<%if @hoge == true%>
+<%if @unread == true%>
   <div class="posts-show__post">
     <p class="posts-show__content">
       <%= @post.content %>
@@ -61,7 +61,7 @@
       <% end %>
     </div>
   </div>
-  <% else %>
+  <% elsif @unread == false %>
     <div class="posts-show__empty">
       <i class="fas fa-award"></i>
     </div>
