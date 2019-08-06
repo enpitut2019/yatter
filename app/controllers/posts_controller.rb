@@ -24,6 +24,7 @@ class PostsController < ApplicationController
       end
       @home_point = @current_user.home_point
     else
+      @unread = true
       @home_point = 0
     end
   end
