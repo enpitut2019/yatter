@@ -2,7 +2,9 @@
  <div>
   <% if @current_user.present? %>
     <%= @current_user.name %> さんでログイン中
-    <%= link_to 'ログアウト', sessions_destroy_path %>
+    <div>
+      <%= link_to 'ログアウト', sessions_destroy_path %>
+    </div>
   <% else %>
     <%= link_to "ログイン", sessions_new_path %>
   <% end %>
@@ -22,7 +24,7 @@
 
 
 
- <% @posts.each do |post| %> 
+ <% @posts.each do |post| %>
   <div>
     ステータス: <%= post.status %>
   </div>
@@ -32,7 +34,9 @@
   <div>
   プロジェクト名: <%= post.content %>
   </div>
-
+  <div>
+  いいね数: <%= post.reactions.where(emotion: :like).count %>
+  </div>
   <div>
     作成日: <%= post.created_at %>
   </div>
