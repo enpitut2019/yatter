@@ -7,6 +7,7 @@ class ReactionsController < ApplicationController
             @reaction = @current_user.reactions.new(emotion: :not_like, post_id: params[:post_id].to_i)
         elsif params[:emotion] == "1"
             @reaction = @current_user.reactions.new(emotion: :like, post_id: params[:post_id].to_i)
+            User.increment_counter(:home_point, @current_user.id)
         end
         if @reaction.save
             redirect_to posts_show_path
