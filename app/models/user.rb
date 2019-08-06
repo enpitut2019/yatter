@@ -1,7 +1,7 @@
 class User < ApplicationRecord
-  has_many :projects
-  has_many :posts
-  has_many :reactions
+  has_many :projects, dependent: :destroy
+  has_many :posts, dependent: :destroy
+  has_many :reactions, dependent: :destroy
 
   has_secure_password validations: true
 

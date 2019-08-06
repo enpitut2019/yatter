@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-  before_action :require_sign_in!, only: ['new', 'index','show']
+  before_action :require_sign_in!, only: ['new', 'index']
 
   def show
     @post = Post.offset(rand(Post.count)).first
@@ -8,6 +8,8 @@ class PostsController < ApplicationController
       posts = Post.where.not(user_id: @current_user.id)
       @post = posts.offset(rand(posts.count)).first
       @home_point = @current_user.home_point
+    else
+      @home_point = 0
     end
     if(@post.nil?)
       redirect_to posts_index_path
