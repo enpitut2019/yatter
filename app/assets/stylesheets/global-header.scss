@@ -22,10 +22,15 @@
 
     &.point {
       font-size: 2rem;
+      font-weight: bold;
+
+      .point-text{
+        font-size: 28px;
+      }
 
       .ten {
         margin-left: 0.25rem;
-        font-size: 0.75rem;
+        font-size: 1.25rem;
       }
     }
 
@@ -43,4 +48,15 @@
   &__space {
     flex: 1;
   }
+}
+
+.user-icon {
+  color: #FFF;
+  font-size: 30px;
+  margin: 0px 16px;
+}
+
+.plus-icon {
+  font-size: 30px;
+  color: #FFF;
 }

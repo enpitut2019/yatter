@@ -6,6 +6,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "variables";
 
+.next-button {
+  margin: 0;
+  font-weight: bold;
+}
+
 .posts {
   &-show {
     -webkit-box-sizing: border-box;
