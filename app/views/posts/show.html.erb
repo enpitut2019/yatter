@@ -1,4 +1,6 @@
 <div class="posts-show">
+
+<%if @unread == true%>
   <div class="posts-show__post">
     <div class="posts-show__content">
       <%= @post.content %>
@@ -60,5 +62,20 @@
       <% end %>
     </div>
   </div>
+  <% elsif @unread == false %>
+    <div class="posts-show__empty">
+      <i class="fas fa-award"></i>
+    </div>
+
+    <div class="posts-show__content">
+      <p class="text">見終わった</p>
+    </div>
+
+    <div class="posts-show__reactions">
+      <%= link_to reactions_create_path(emotion: 0, post_id: @post.id), class: 'posts-show__reload' do %>
+        <i class="fas fa-redo-alt"></i>
+      <% end %>
+    </div>
+  <% end %>
 
 </div>
