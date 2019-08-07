@@ -4,15 +4,28 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.offset(rand(Post.count)).first
-    if signed_in?
-      posts = Post.where.not(user_id: @current_user.id)
-      @post = posts.offset(rand(posts.count)).first
-      @home_point = @current_user.home_point
-    else
-      @home_point = 0
-    end
     if(@post.nil?)
       redirect_to posts_index_path
+    end
+    if signed_in?
+      @unread = true
+      posts_not_current_user = Post.where.not(user_id: @current_user.id)
+      reactions_by_current_user = @current_user.reactions
+      if reactions_by_current_user.present?
+       posts = (posts_not_current_user) - (posts_not_current_user.joins(:reactions).where(reactions:{user_id:@current_user.id}))
+       #@post = posts.(rand(posts.count)).first
+       if posts.any?
+        @post = posts.shuffle.sample(1).first
+       else
+        @unread = false
+       end
+      else
+        @post = posts_not_current_user.offset(rand(posts_not_current_user.count)).first
+      end
+      @home_point = @current_user.home_point
+    else
+      @unread = true
+      @home_point = 0
     end
   end
 
