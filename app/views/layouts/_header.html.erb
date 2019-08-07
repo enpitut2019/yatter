@@ -7,8 +7,8 @@
         <span class="point-text"><%= @current_user.home_point %></span><span class="ten">pt</span>
       </p>
     </div>
-    <i class="fas fa-user user-icon"><%= link_to "", posts_index_path, class: "global-header__item my-page" %></i>
-    <i class="far fa-edit plus-icon"><%= link_to "", posts_new_path, class: "global-header__item post" %></i>
+    <%= link_to "", posts_index_path, class: "fas fa-user user-icon" %>
+    <%= link_to "", posts_new_path, class: "far fa-edit plus-icon" %>
     <%#= link_to 'ログアウト', sessions_destroy_path, class: "global-header__item" %>
   </nav>
 <% else %>
