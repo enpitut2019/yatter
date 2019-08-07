@@ -3,14 +3,15 @@
 Yatter is a SISCORN's project!
 
 ## elevator pitch
-ちょっとした行動が褒められていない現状を解決したい、自分がいいことをしていると思っている人向けの、シンプルな行動の評価を実現するYatterです。
+
+ちょっとした行動が褒められていない現状を解決したい、自分がいいことをしていると思っている人向けの、シンプルな行動の評価を実現する Yatter です。
 
 投稿した内容がランダムに表示され、それに気軽にいいねをすることができます。
 
-TwitterやFacebookと異なり、褒められることに特化しているため小さなことでも簡単にシェアできます。
-
+Twitter や Facebook と異なり、褒められることに特化しているため小さなことでも簡単にシェアできます。
 
 ## function
+
 褒められたいことを匿名で投稿することができます。
 
 投稿に匿名でいいねをつけることができます。
@@ -19,8 +20,8 @@ TwitterやFacebookと異なり、褒められることに特化しているた�
 
 自分の投稿に付けられたいいねの数を見ることができます。
 
-
 ## members
+
 - うえまつみく
 - いわなみはるか
 - むらかみあいか
@@ -29,4 +30,5 @@ TwitterやFacebookと異なり、褒められることに特化しているた�
 - すだみきひろ
 
 ## demo
-[http://siscorn-yatter.herokuapp.com/posts/index](http://siscorn-yatter.herokuapp.com/posts/index)
+
+[http://siscorn-yatter.herokuapp.com/](http://siscorn-yatter.herokuapp.com/)
