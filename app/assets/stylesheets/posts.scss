@@ -5,7 +5,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "variables";
-
 .next-icons {
   margin-left: 12px;
   width: 40px;
@@ -24,6 +23,10 @@
   color: #FFF;
   margin-top: 0px;
   margin-left: 4px;
+}
+
+.text-back {
+  margin-top: 5px;
 }
 
 .posts {
@@ -149,6 +152,19 @@
       -moz-border-radius: 6px;
       border-radius: 6px;
       font-size: 1.25rem;
+    }
+    &__back {
+      display: block;
+      text-decoration: none;
+      color: $primary;
+      border: 2px solid $primary;
+      padding: 0.25rem 0.5rem;
+      -webkit-border-radius: 6px;
+      -moz-border-radius: 6px;
+      border-radius: 6px;
+      width: 150px;
+      height: 30px;
+      margin: 0rem auto;
     }
   }
 
