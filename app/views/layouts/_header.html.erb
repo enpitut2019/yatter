@@ -4,11 +4,11 @@
     <div class="global-header__space"></div>
     <div class="global-header__item point">
       <p>
-        <%= @current_user.home_point %><span class="ten">点</span>
+        <span class="point-text"><%= @current_user.home_point %></span><span class="ten">pt</span>
       </p>
     </div>
-    <%= link_to "My Page", posts_index_path, class: "global-header__item my-page" %>
-    <%= link_to "+", posts_new_path, class: "global-header__item post" %>
+    <%= link_to "", posts_index_path, class: "fas fa-user user-icon" %>
+    <%= link_to "", posts_new_path, class: "far fa-edit plus-icon" %>
     <%#= link_to 'ログアウト', sessions_destroy_path, class: "global-header__item" %>
   </nav>
 <% else %>

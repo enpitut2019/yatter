@@ -5,9 +5,30 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "variables";
+.next-icons {
+  margin-left: 12px;
+  width: 40px;
+}
+
+.next-icon {
+  font-size: 36px;
+  font-weight: bold;
+  color: #FFF;
+}
+
+.next-text {
+  display: flex;
+  font-size: 12px;
+  font-weight: bold;
+  color: #FFF;
+  margin-top: 0px;
+  margin-left: 4px;
+}
+
 .text-back {
   margin-top: 5px;
 }
+
 .posts {
   &-show {
     -webkit-box-sizing: border-box;
@@ -34,6 +55,7 @@
       padding: 1rem;
       margin: 0;
       font-size: 2rem;
+      display: flex;
     }
 
     &__empty {

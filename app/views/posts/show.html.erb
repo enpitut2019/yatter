@@ -2,9 +2,15 @@
 
 <%if @unread == true%>
   <div class="posts-show__post">
-    <p class="posts-show__content">
+    <div class="posts-show__content">
       <%= @post.content %>
-    </p>
+      <div class="next-icons">
+          <%= link_to reactions_create_path(emotion: 0, post_id: @post.id) do %>
+            <i class="next-icon fas fa-chevron-circle-right"></i>
+          <% end %>
+          <p class="next-text">次へ</p>
+      </div>
+    </div>
     <div class="posts-show__reactions">
       <%= link_to reactions_create_path(emotion: 1, post_id: @post.id), class: 'posts-show__reaction' do %>
         <i class="icon far fa-thumbs-up"></i>
@@ -53,11 +59,6 @@
           <span class="icon text-icon">偉</span>
           <p class="text">偉業！！！</p>
         </div>
-      <% end %>
-
-      <%= link_to reactions_create_path(emotion: 0, post_id: @post.id), class: 'posts-show__reaction' do %>
-        <i class="icon fas fa-arrow-right"></i>
-        <p class="text">次へ</p>
       <% end %>
     </div>
   </div>
