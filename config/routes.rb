@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'reactions/create'
+  get 'posts/show', to: redirect("/"), as: 'redirect_posts_show'
   get '/', to: 'posts#show', as: 'posts/show'
   get 'new', to: 'posts#new', as: 'posts/new'
   post 'posts/create'
