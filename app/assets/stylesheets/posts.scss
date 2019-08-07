@@ -6,9 +6,24 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "variables";
 
-.next-button {
-  margin: 0;
+.next-icons {
+  margin-left: 12px;
+  width: 40px;
+}
+
+.next-icon {
+  font-size: 36px;
   font-weight: bold;
+  color: #FFF;
+}
+
+.next-text {
+  display: flex;
+  font-size: 12px;
+  font-weight: bold;
+  color: #FFF;
+  margin-top: 0px;
+  margin-left: 4px;
 }
 
 .posts {
@@ -37,6 +52,7 @@
       padding: 1rem;
       margin: 0;
       font-size: 2rem;
+      display: flex;
     }
 
     &__reactions {
