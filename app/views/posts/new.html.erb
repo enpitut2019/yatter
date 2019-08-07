@@ -7,5 +7,9 @@
     <div>
       <%= f.submit "ほめて！", class: "posts-new__submit" %>
     </div>
+    <%= link_to posts_show_path, class: 'posts-new__back' do %>
+<!--      <i class="fas fa-chevron-left"></i>-->
+      <div class="text-back">戻る</div>
+    <% end %>
   <% end %>
 </div>

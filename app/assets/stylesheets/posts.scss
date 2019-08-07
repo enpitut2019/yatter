@@ -5,7 +5,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "variables";
-
+.text-back {
+  margin-top: 5px;
+}
 .posts {
   &-show {
     -webkit-box-sizing: border-box;
@@ -128,6 +130,19 @@
       -moz-border-radius: 6px;
       border-radius: 6px;
       font-size: 1.25rem;
+    }
+    &__back {
+      display: block;
+      text-decoration: none;
+      color: $primary;
+      border: 2px solid $primary;
+      padding: 0.25rem 0.5rem;
+      -webkit-border-radius: 6px;
+      -moz-border-radius: 6px;
+      border-radius: 6px;
+      width: 150px;
+      height: 30px;
+      margin: 0rem auto;
     }
   }
 
